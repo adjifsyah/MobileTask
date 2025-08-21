@@ -6,6 +6,15 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		CF4A6B102E5713E400B37505 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = CF4A6B0F2E5713E400B37505 /* Kingfisher */; };
+		CF4A6B132E57140B00B37505 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = CF4A6B122E57140B00B37505 /* RxCocoa */; };
+		CF4A6B162E57142A00B37505 /* MBProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = CF4A6B152E57142A00B37505 /* MBProgressHUD */; };
+		CF4A6B192E57145B00B37505 /* XLPagerTabStrip in Frameworks */ = {isa = PBXBuildFile; productRef = CF4A6B182E57145B00B37505 /* XLPagerTabStrip */; };
+		CF4A6B1C2E57150400B37505 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CF4A6B1B2E57150400B37505 /* RealmSwift */; };
+		CF62FB872E5719F7003045BB /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CF62FB862E5719F7003045BB /* Alamofire */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		CF3E4F372E56FE9D00835772 /* MobileTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -23,6 +32,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF4A6B132E57140B00B37505 /* RxCocoa in Frameworks */,
+				CF4A6B1C2E57150400B37505 /* RealmSwift in Frameworks */,
+				CF4A6B192E57145B00B37505 /* XLPagerTabStrip in Frameworks */,
+				CF62FB872E5719F7003045BB /* Alamofire in Frameworks */,
+				CF4A6B162E57142A00B37505 /* MBProgressHUD in Frameworks */,
+				CF4A6B102E5713E400B37505 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +80,12 @@
 			);
 			name = MobileTask;
 			packageProductDependencies = (
+				CF4A6B0F2E5713E400B37505 /* Kingfisher */,
+				CF4A6B122E57140B00B37505 /* RxCocoa */,
+				CF4A6B152E57142A00B37505 /* MBProgressHUD */,
+				CF4A6B182E57145B00B37505 /* XLPagerTabStrip */,
+				CF4A6B1B2E57150400B37505 /* RealmSwift */,
+				CF62FB862E5719F7003045BB /* Alamofire */,
 			);
 			productName = MobileTask;
 			productReference = CF3E4F372E56FE9D00835772 /* MobileTask.app */;
@@ -94,6 +115,14 @@
 			);
 			mainGroup = CF3E4F2E2E56FE9D00835772;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				CF4A6B0E2E5713E400B37505 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				CF4A6B112E57140B00B37505 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				CF4A6B142E57142A00B37505 /* XCRemoteSwiftPackageReference "MBProgressHUD" */,
+				CF4A6B172E57145B00B37505 /* XCRemoteSwiftPackageReference "XLPagerTabStrip" */,
+				CF4A6B1A2E57150400B37505 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				CF62FB852E5719F7003045BB /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = CF3E4F382E56FE9D00835772 /* Products */;
 			projectDirPath = "";
@@ -332,6 +361,90 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CF4A6B0E2E5713E400B37505 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.5.0;
+			};
+		};
+		CF4A6B112E57140B00B37505 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.9.0;
+			};
+		};
+		CF4A6B142E57142A00B37505 /* XCRemoteSwiftPackageReference "MBProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jdg/MBProgressHUD";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.0;
+			};
+		};
+		CF4A6B172E57145B00B37505 /* XCRemoteSwiftPackageReference "XLPagerTabStrip" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/xmartlabs/XLPagerTabStrip";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.1.0;
+			};
+		};
+		CF4A6B1A2E57150400B37505 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
+		CF62FB852E5719F7003045BB /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.10.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CF4A6B0F2E5713E400B37505 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CF4A6B0E2E5713E400B37505 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		CF4A6B122E57140B00B37505 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CF4A6B112E57140B00B37505 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		CF4A6B152E57142A00B37505 /* MBProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CF4A6B142E57142A00B37505 /* XCRemoteSwiftPackageReference "MBProgressHUD" */;
+			productName = MBProgressHUD;
+		};
+		CF4A6B182E57145B00B37505 /* XLPagerTabStrip */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CF4A6B172E57145B00B37505 /* XCRemoteSwiftPackageReference "XLPagerTabStrip" */;
+			productName = XLPagerTabStrip;
+		};
+		CF4A6B1B2E57150400B37505 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CF4A6B1A2E57150400B37505 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+		CF62FB862E5719F7003045BB /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CF62FB852E5719F7003045BB /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CF3E4F2F2E56FE9D00835772 /* Project object */;
 }
