@@ -34,40 +34,48 @@ class ListPokeRepositoryImpl<
     }
     
     func execute(request: String?) -> Observable<ListPokemonModel> {
+        guard let requestURL = request, let urlComponents = URLComponents(string: requestURL) else {
+            return fallbackFromDB(offset: 0, limit: 20)
+        }
+        
+        let offset = urlComponents
+            .queryItems?
+            .first(where: { $0.name == "offset" })?
+            .value.flatMap { Int($0) } ?? 0
+        
+        let limit = urlComponents
+            .queryItems?
+            .first(where: { $0.name == "limit" })?
+            .value.flatMap { Int($0) } ?? 20
+
         return self.remote.execute(request: request)
             .flatMap { response -> Observable<ListPokemonModel> in
                 let domain = self.mapper.transformResponseToDomain(response: response)
                 let entities = self.mapper.transformDomainToEntities(domain: domain)
                 
-                return self.locale.list(request: nil)
-                    .flatMap { existingEntities -> Observable<ListPokemonModel> in
-                        let existingIds = Set(existingEntities.map { $0.name })
-                        
-                        return Observable.from(entities)
-                            .flatMap { entity -> Observable<PokemonEntity> in
-                                if existingIds.contains(entity.name) {
-                                    return Observable.empty()
-                                } else {
-                                    return self.locale.add(entity: entity)
-                                        .flatMap { success -> Observable<PokemonEntity> in
-                                            if success {
-                                                return Observable.just(entity)
-                                            } else {
-                                                return Observable.empty()
-                                            }
-                                        }
-                                }
-                            }
-                            .toArray()
-                            .asObservable()
-                            .map { _ in domain }
-                    }
+                return Observable.from(entities)
+                    .flatMap { entity in self.locale.add(entity: entity) }
+                    .toArray()
+                    .asObservable()
+                    .map { _ in domain }
             }
             .catch { _ in
-                return self.locale.list(request: nil)
-                    .map { localEntities in
-                        self.mapper.transformEntitiesToDomain(entities: localEntities)
-                    }
+                return self.fallbackFromDB(offset: offset, limit: limit)
+            }
+    }
+
+    private func fallbackFromDB(offset: Int, limit: Int) -> Observable<ListPokemonModel> {
+        return self.locale.list(request: nil)
+            .map { allEntities in
+                let pagedEntities: [PokemonEntity]
+                
+                if offset == 0 {
+                    pagedEntities = Array(allEntities)
+                } else {
+                    pagedEntities = Array(allEntities.dropFirst(offset).prefix(limit))
+                }
+                
+                return self.mapper.transformEntitiesToDomain(entities: pagedEntities)
             }
     }
 }

@@ -9,12 +9,21 @@ import Foundation
 import RealmSwift
 
 class Injection {
-    func proviceRepository() {
-        let client: HttpClient = AlamofireClient()
-        let realm = try! Realm()
+    static let shared = Injection()
+    private init() { }
+    
+    let client: HttpClient = AlamofireClient()
+    let realm = try! Realm()
+    
+    func provideListPokemonRepository() -> ListPokeRepositoryImpl<
+        PokemonRemoteDataSource,
+        RealmLocaleDataSource,
+        ListMapperImpl
+    > {
         let remote = PokemonRemoteDataSource(httpClient: client)
         let locale = RealmLocaleDataSource(realm: realm)
         let mapper = ListMapperImpl()
-        let repo = ListPokeRepositoryImpl(remote: remote, locale: locale, mapper: mapper)
+        let repository = ListPokeRepositoryImpl(remote: remote, locale: locale, mapper: mapper)
+        return repository
     }
 }

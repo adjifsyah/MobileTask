@@ -22,8 +22,10 @@ class PokemonRemoteDataSource: RemoteDataSource {
         httpClient.load(urlString: request ?? "", method: "GET", params: nil)
             .flatMap { data -> Observable<ListPokemonResponse> in
                 let decoder = JSONDecoder()
+                
                 do {
-                    return Observable.just(try decoder.decode(ListPokemonResponse.self, from: data))
+                    let response = try decoder.decode(ListPokemonResponse.self, from: data)
+                    return Observable.just(response)
                 } catch {
                     return Observable<ListPokemonResponse>.error(error)
                 }
