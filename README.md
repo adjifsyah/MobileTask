@@ -1,8 +1,6 @@
 # MobileTask - PokeApp
 
-**Deadline:** 5 hari kerja  
-
-Aplikasi ini dibuat untuk memenuhi tugas MobileTask menggunakan API [PokeAPI](https://pokeapi.co/). Aplikasi dibangun menggunakan **UIKit tanpa Storyboard/XIB** atau **SwiftUI** (pilih salah satu sesuai implementasi).  
+Aplikasi ini dibuat untuk memenuhi tugas MobileTask menggunakan API [PokeAPI](https://pokeapi.co/). Aplikasi dibangun menggunakan **SwiftUI**.
 
 ---
 
