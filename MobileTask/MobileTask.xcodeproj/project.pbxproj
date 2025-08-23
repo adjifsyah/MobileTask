@@ -12,8 +12,23 @@
 		CF4A6B162E57142A00B37505 /* MBProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = CF4A6B152E57142A00B37505 /* MBProgressHUD */; };
 		CF4A6B192E57145B00B37505 /* XLPagerTabStrip in Frameworks */ = {isa = PBXBuildFile; productRef = CF4A6B182E57145B00B37505 /* XLPagerTabStrip */; };
 		CF4A6B1C2E57150400B37505 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CF4A6B1B2E57150400B37505 /* RealmSwift */; };
+		CF537D912E58A82C002EBBF4 /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = CF4A6B1B2E57150400B37505 /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		CF62FB872E5719F7003045BB /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CF62FB862E5719F7003045BB /* Alamofire */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CF537D922E58A82C002EBBF4 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				CF537D912E58A82C002EBBF4 /* RealmSwift in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		CF3E4F372E56FE9D00835772 /* MobileTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,6 +85,7 @@
 				CF3E4F332E56FE9D00835772 /* Sources */,
 				CF3E4F342E56FE9D00835772 /* Frameworks */,
 				CF3E4F352E56FE9D00835772 /* Resources */,
+				CF537D922E58A82C002EBBF4 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -287,6 +303,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -320,6 +337,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (

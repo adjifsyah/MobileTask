@@ -11,7 +11,7 @@ import SwiftUI
 struct MobileTaskApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RootView()
         }
     }
 }
