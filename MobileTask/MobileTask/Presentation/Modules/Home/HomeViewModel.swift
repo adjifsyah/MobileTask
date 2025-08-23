@@ -10,7 +10,6 @@ import RxSwift
 import SwiftUI
 
 class HomeViewModel: ObservableObject {
-    
     @Published var pokemons: [PokemonModel] = []
     @Published var nextPage: String? = nil
     @Published var isMainLoading: Bool = false {
