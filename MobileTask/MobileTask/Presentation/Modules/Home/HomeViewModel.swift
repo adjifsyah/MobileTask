@@ -11,6 +11,7 @@ import SwiftUI
 
 class HomeViewModel: ObservableObject {
     @Published var pokemons: [PokemonModel] = []
+    @Published var filterPokemons: [PokemonModel] = []
     @Published var nextPage: String? = nil
     @Published var isMainLoading: Bool = false {
         didSet {
@@ -18,6 +19,11 @@ class HomeViewModel: ObservableObject {
         }
     }
     @Published var isLoading: Bool = false
+    @Published var queryPokemon: String = "" {
+        didSet {
+            onFilter()
+        }
+    }
     
     private let repository = Injection.shared.provideListPokemonRepository()
     private var disposeBag = DisposeBag()
@@ -33,6 +39,8 @@ class HomeViewModel: ObservableObject {
                 guard let self else { return }
                 isMainLoading = false
                 pokemons = domain.results
+                filterPokemons = pokemons
+                onFilter()
                 nextPage = domain.next
             }, onError: { [weak self] error in
                 guard let self else { return }
@@ -50,7 +58,9 @@ class HomeViewModel: ObservableObject {
             .subscribe(onNext: { [weak self] domain in
                 guard let self else { return }
                 pokemons.append(contentsOf: domain.results)
+                filterPokemons = pokemons
                 self.nextPage = domain.next
+                onFilter()
                 isLoading = false
             }, onError: { [weak self] error in
                 guard let self else { return }
@@ -75,4 +85,7 @@ class HomeViewModel: ObservableObject {
         }
     }
     
+    func onFilter() {
+        filterPokemons = queryPokemon.isEmpty ? pokemons : pokemons.filter({ $0.name.lowercased().contains(queryPokemon.lowercased()) })
+    }
 }

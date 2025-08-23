@@ -12,9 +12,15 @@ struct HomeView: View {
     
     var body: some View {
         VStack {
+            TextFieldView(text: $viewModel.queryPokemon, placeholder: "Pencarian", isSecure: true)
+                .frame(height: 32)
+                .modifier(FormStyle())
+                .padding(.top, 24)
+                .padding(.horizontal, 16)
+            
             ScrollView {
                 LazyVStack(alignment: .leading) {
-                    ForEach($viewModel.pokemons, id: \.id) { pokemon in
+                    ForEach($viewModel.filterPokemons, id: \.id) { pokemon in
                         NavigationLink {
                             DetailView(nextURL: pokemon.wrappedValue.url)
                         } label: {
