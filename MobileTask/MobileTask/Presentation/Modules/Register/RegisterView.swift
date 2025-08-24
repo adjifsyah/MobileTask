@@ -17,7 +17,7 @@ struct RegisterView: View {
         GeometryReader { proxy in
             ScrollView {
                 VStack(spacing: 20) {
-                    Text("Dafter")
+                    Text("Daftar")
                         .font(.largeTitle)
                     
                     if !viewModel.message.isEmpty && viewModel.success == false {
