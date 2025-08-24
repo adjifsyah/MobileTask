@@ -12,7 +12,7 @@ struct HomeView: View {
     
     var body: some View {
         VStack {
-            TextFieldView(text: $viewModel.queryPokemon, placeholder: "Pencarian", isSecure: true)
+            TextFieldView(text: $viewModel.queryPokemon, placeholder: "Pencarian")
                 .frame(height: 32)
                 .modifier(FormStyle())
                 .padding(.top, 24)
